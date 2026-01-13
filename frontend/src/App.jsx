@@ -8,7 +8,7 @@ function App() {
   // 1. Fetch Data from Python Backend
   const fetchInventory = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:8000/inventory')
+      const response = await axios.get('https://taro-backend-zwb3.onrender.com/inventory')       
       setInventory(response.data)
       setLoading(false)
     } catch (error) {
@@ -24,8 +24,8 @@ function App() {
   // 2. Function to Handle a Sale
   const handleSale = async (itemName) => {
     try {
-      await axios.post('http://127.0.0.1:8000/sale', {
-        name: itemName,
+      await axios.post('https://taro-backend-zwb3.onrender.com/sale', {       
+         name: itemName,
         amount_used: 1 
       })
       fetchInventory() // Refresh the list immediately

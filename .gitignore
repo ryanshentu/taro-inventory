@@ -1,0 +1,11 @@
+# Python System Files
+venv/
+__pycache__/
+*.pyc
+
+# Mac System Files
+.DS_Store
+
+# Frontend Dependencies 
+frontend/node_modules/
+frontend/dist/

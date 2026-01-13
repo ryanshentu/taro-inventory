@@ -14,9 +14,9 @@ This project is designed as a cloud-native application using a **CI/CD pipeline*
 
 ```mermaid
 graph LR
-    User[User / Browser] -- HTTPS --> Frontend[React Frontend (Render)]
-    Frontend -- JSON API --> Backend[FastAPI Backend (Render)]
-    Backend -- SQLAlchemy --> Database[(PostgreSQL Database (AWS RDS))]
+    User["User / Browser"] -- HTTPS --> Frontend["React Frontend (Render)"]
+    Frontend -- JSON API --> Backend["FastAPI Backend (Render)"]
+    Backend -- SQLAlchemy --> Database[("PostgreSQL Database (AWS RDS)")]
 ```
 
 * **Frontend:** React.js hosted on Render.

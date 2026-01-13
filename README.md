@@ -12,6 +12,8 @@
 ## 🏗 Architecture
 This project is designed as a cloud-native application using a **CI/CD pipeline**.
 
+![Taro Inventory Dashboard](./dashboard.png)
+
 ```mermaid
 graph LR
     User["User / Browser"] -- HTTPS --> Frontend["React Frontend (Render)"]

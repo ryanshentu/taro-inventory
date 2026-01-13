@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 # 1. DATABASE SETUP
 # This URL connects to your local Postgres server.
 # Format: postgresql://user:password@localhost/dbname
-SQLALCHEMY_DATABASE_URL = "postgresql://localhost/taro_db"
+SQLALCHEMY_DATABASE_URL = "postgresql://postgres:Lin19120@taro-db.cxemks0mavmy.us-east-2.rds.amazonaws.com/postgres"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -30,10 +30,15 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 # Allow React to talk to this API
-origins = [
-    "http://localhost:5173",
-    "http://localhost:3000",
-]
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins, # uses the list above
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.add_middleware(
     CORSMiddleware,
